@@ -8,6 +8,7 @@ html {
 body {
   background-color: rgb(240, 240, 225);
   margin: 0;
+  font-size: xx-large;
   /* скролл бар ( стандартный бесит ) */
 }
 body::-webkit-scrollbar {
@@ -23,65 +24,96 @@ body::-webkit-scrollbar-thumb {
 }
 
 header {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
   width: 100%;
   height: 7vh;
   margin: 0;
   padding: 0;
   background: wheat;
 }
-header > nav {
-  display: inline-block;
-  max-width: 50%;
-  background: sandybrown;
-  float: right;
-  margin: 0;
+header > * {
+  display: flex;
+  align-items: center;
 }
-header > nav a {
-  font-size: 30px;
-  display: inline;
-  margin: 10px;
-  padding: 0 10px 0 10px;
+
+nav {
+  display: flex;
+  align-items: center;
+  background: sandybrown;
+}
+nav a {
+  padding: 10px;
+  margin: 10px 0;
   text-decoration: none;
   color: black;
   transition-duration: 0.3s;
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3) inset, -1px -1px 1px rgba(0, 0, 0, 0.1) inset;
 }
-header > nav a:hover {
+nav a:hover {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1) inset, -1px -1px 1px rgba(255, 255, 255, 0.1) inset;
 }
-header > nav a:active {
+nav a:active {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1) inset, -2px -2px 4px 2px rgba(255, 255, 255, 0.1) inset;
 }
 
+.desktop {
+  display: none;
+  flex-direction: row;
+  padding: 0 10px;
+}
+.desktop a {
+  font-size: small;
+}
+
+.mobile {
+  display: flex;
+  width: 60vw;
+  flex-direction: column;
+  align-content: space-between;
+}
+.mobile a {
+  font-size: xxx-large;
+}
+
 .name {
-  display: inline-block;
   margin-left: 10px;
   margin-right: 10px;
 }
 
 .logo {
   float: left;
-  height: 50px;
-  width: 50px;
+  height: 5vh;
+  width: 10vw;
   margin: 10px 0 0 10px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content-container > * {
+  margin: 1vh 0;
 }
 
 .hyper-list {
   background: bisque;
   display: block;
-  padding: 40px;
-  width: 920px;
-  margin: 0 auto 0 auto;
+  list-style-type: none;
+  padding-left: 2vw;
 }
 .hyper-list li {
   margin: 4px 0 4px 0;
 }
 
 table {
-  width: 960px;
-  height: 500px;
+  max-width: 800px;
+  width: 100vw;
+  height: 80vh;
   background: bisque;
-  margin: 30px auto 0 auto;
+  font-size: xx-large;
   /*нечетные элементы среди тех, что имеют детей td без класса "error" (чтобы не считать заголовки и ошибки)*/
 }
 table td {
@@ -98,33 +130,44 @@ table tr:nth-child(even of :has(td:not(.error))) {
 }
 
 form {
-  font-size: 20px;
+  max-width: 800px;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: bisque;
-  margin: 30px auto 0 auto;
-  padding: 10px 0 20px 0;
-  width: 960px;
+  padding: 1vh 4vw;
 }
-form > label, form div, form > input {
-  display: block;
-  margin-top: 20px;
-  margin-left: auto;
-  width: 220px;
-  margin-right: auto;
+form > label:not(:has(.checkbox)), form > .poem-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+form label:has(.radio) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 form h2 {
   display: block;
-  margin: 5px auto 0 auto;
-  width: 200px;
 }
 form label:has(.checkbox) {
-  font-size: 13px;
+  font-size: x-large;
+}
+form .radio, form .checkbox {
+  transform: scale(1.5);
 }
 form input:not(.radio, .checkbox), form select, form textarea {
   text-align: center;
-  width: 200px;
+  font-size: xx-large;
+  height: 3vh;
 }
 
 footer {
+  display: flex;
+  align-items: center;
   width: 100%;
   background: wheat;
   height: 5vh;
@@ -135,6 +178,41 @@ footer * {
 }
 footer .foo-body {
   margin: 0 10px 0 10px;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    font-size: small;
+  }
+  table {
+    font-size: small;
+  }
+  form {
+    font-size: small;
+  }
+  form label:has(.checkbox) {
+    font-size: small;
+  }
+  form input:not(.radio, .checkbox), form select, form textarea {
+    text-align: center;
+    font-size: small;
+    height: 2vh;
+  }
+  .logo {
+    width: 3vw;
+    height: 5vh;
+  }
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 10vh;
+  }
+  .desktop {
+    display: flex;
+  }
+  .mobile {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
