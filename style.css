@@ -1,0 +1,140 @@
+@charset "UTF-8";
+html {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body {
+  background-color: rgb(240, 240, 225);
+  margin: 0;
+  /* скролл бар ( стандартный бесит ) */
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: rgb(240, 240, 225);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  border: 3px solid whitesmoke;
+}
+
+header {
+  width: 100%;
+  height: 7vh;
+  margin: 0;
+  padding: 0;
+  background: wheat;
+}
+header > nav {
+  display: inline-block;
+  max-width: 50%;
+  background: sandybrown;
+  float: right;
+  margin: 0;
+}
+header > nav a {
+  font-size: 30px;
+  display: inline;
+  margin: 10px;
+  padding: 0 10px 0 10px;
+  text-decoration: none;
+  color: black;
+  transition-duration: 0.3s;
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3) inset, -1px -1px 1px rgba(0, 0, 0, 0.1) inset;
+}
+header > nav a:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1) inset, -1px -1px 1px rgba(255, 255, 255, 0.1) inset;
+}
+header > nav a:active {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1) inset, -2px -2px 4px 2px rgba(255, 255, 255, 0.1) inset;
+}
+
+.name {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.logo {
+  float: left;
+  height: 50px;
+  width: 50px;
+  margin: 10px 0 0 10px;
+}
+
+.hyper-list {
+  background: bisque;
+  display: block;
+  padding: 40px;
+  width: 920px;
+  margin: 0 auto 0 auto;
+}
+.hyper-list li {
+  margin: 4px 0 4px 0;
+}
+
+table {
+  width: 960px;
+  height: 500px;
+  background: bisque;
+  margin: 30px auto 0 auto;
+  /*нечетные элементы среди тех, что имеют детей td без класса "error" (чтобы не считать заголовки и ошибки)*/
+}
+table td {
+  text-align: center;
+}
+table th {
+  background: rgb(222, 176, 101);
+}
+table .error {
+  background: rgba(255, 0, 0, 0.5);
+}
+table tr:nth-child(even of :has(td:not(.error))) {
+  background: rgb(203, 185, 155);
+}
+
+form {
+  font-size: 20px;
+  background: bisque;
+  margin: 30px auto 0 auto;
+  padding: 10px 0 20px 0;
+  width: 960px;
+}
+form > label, form div, form > input {
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  width: 220px;
+  margin-right: auto;
+}
+form h2 {
+  display: block;
+  margin: 5px auto 0 auto;
+  width: 200px;
+}
+form label:has(.checkbox) {
+  font-size: 13px;
+}
+form input:not(.radio, .checkbox), form select, form textarea {
+  text-align: center;
+  width: 200px;
+}
+
+footer {
+  width: 100%;
+  background: wheat;
+  height: 5vh;
+}
+footer * {
+  display: inline-block;
+  margin: 10px 0 10px 0;
+}
+footer .foo-body {
+  margin: 0 10px 0 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
