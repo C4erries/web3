@@ -113,6 +113,7 @@ nav a:active {
 
 table {
   max-width: 800px;
+  order: 1;
   width: 90vw;
   height: 80vh;
   background: bisque;
@@ -133,6 +134,7 @@ table tr:nth-child(even of :has(td:not(.error))) {
 }
 
 form {
+  order: 3;
   max-width: 800px;
   width: 70vw;
   display: flex;
@@ -189,6 +191,9 @@ footer .foo-body {
   }
   table {
     font-size: small;
+  }
+  .hyper-list{
+    order: 2;
   }
   form {
     font-size: small;
