@@ -117,13 +117,14 @@ nav {
   }
 }
 
-
+.div-table{
+  order: 1;
+}
 table{
   max-width: 800px;
   width: 90vw;
   height: 80vh;
   background: bisque;
-  order: 1;
   font-size: large;
   td{
     text-align: center;
