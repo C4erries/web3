@@ -123,6 +123,7 @@ table{
   width: 90vw;
   height: 80vh;
   background: bisque;
+  order: 1;
   font-size: large;
   td{
     text-align: center;
@@ -142,6 +143,7 @@ table{
 
 form {
   max-width: 800px;
+  order: 3;
   width: 70vw;
   display: flex;
   flex-direction: column;
@@ -200,6 +202,9 @@ footer{
 
   body{
     font-size: small;
+  }
+  .hyper-links{
+    order: 2;
   }
   table{
     font-size: small;
