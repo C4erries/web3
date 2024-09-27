@@ -110,10 +110,11 @@ nav a:active {
 .hyper-list li {
   margin: 4px 0 4px 0;
 }
-
+.div-table{
+  order: 1;
+}
 table {
   max-width: 800px;
-  order: 1;
   width: 90vw;
   height: 80vh;
   background: bisque;
